@@ -45,4 +45,4 @@ module load RAxML/8.2.10
 raxml -s /data/users/tbatarse/raxmlanalysis/core_gene_alignment.aln-gb -w /data/users/tbatarse/raxmlanalysis -n core_gene_16_genomes.out -m GTRCAT -f a -x 8952 -N 100 -p 7341
 ```
 
-[tree]!(https://github.com/tiffanybatarseh/EE282_Final_Project/blob/master/Tree_Raxml.png?raw=true)
+![tree](https://github.com/tiffanybatarseh/EE282_Final_Project/blob/master/Tree_Raxml.png?raw=true)
