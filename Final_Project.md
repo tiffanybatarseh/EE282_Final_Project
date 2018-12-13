@@ -6,6 +6,18 @@ First, I am interesetd in the gene content of *X. fastidiosa* isolates
 
 I've downloaded complete, chromosome level assemblies of *X. fastdiosa* isolates from NCBI. I have also downloaded the *X. taiwanensis* genome to use as an outgroup for analysis.
 
+## Prokka: Genome annotation
+
+I want to annotate all of the genomes with the same software to have consistency and an up-to-date annotation that can be compared.
+
+I am using the software Prokka, version 1.13, to annotate the genomes.
+
+```
+prokka *.fasta
+```
+
+This results in roughly 10 files, of importance is a GFF file with nucleotide sequence appended on it that is neccessary for the subsequent analysis. 
+
 ## Roary: to find the genes shared among all of the genomes
 
 I am using version 3.11.2
@@ -14,7 +26,7 @@ I am using version 3.11.2
 roary -f /Users/tiffanybatarseh/RR_XFT_75blast -i 75 -e -n -cd 100 -v -r /Users/tiffanybatarseh/xylella_PLS_gff/*.gff
 ```
 
-I am using the program roary to identify the genes shared amongst all of the genomes and to generate a presence-absence matrix of all of the genes and all of the genomes. I use the options -i to adjust the blast stage minimum percentage identity and -cd to specify the percentage of isolates a gene must be in to be considered a "core" gene.
+I am using the program roary to identify the genes shared amongst all of the genomes and to generate a presence-absence matrix of all of the genes and all of the genomes. I specify my directory for the output files as well as the directory with my GFF files. I use the options -i to adjust the blast stage minimum percentage identity and -cd to specify the percentage of isolates a gene must be in to be considered a "core" gene.
 
 This analysis results in many files, one general one is a summary statistic file about the genes found:
 
