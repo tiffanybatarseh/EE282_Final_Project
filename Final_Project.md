@@ -8,6 +8,31 @@ I've downloaded complete, chromosome level assemblies of *X. fastdiosa* isolates
 
 ## Basic genome characteristics
 
+**Length of the genomes**
+
+```
+bioawk -c fastx '{ print $name, length($seq) }' < xylella_genomes.fasta
+AE003849	2679306
+AE009442	2519802
+CP000941	2475130
+CP001011	2535690
+CP002165	2491203
+CP006696	2750603
+CP006740	2642186
+CP009790	2681334
+CP009823	2788789
+CP009826	2666242
+CP009829	2748594
+CP009885	2813297
+CP010051	2733974
+CP016608	2508097
+CP016610	2508296
+CP020870	2508465
+CP011800.1	2824527
+```
+
+**GC percentage**
+
 Concatanate all of the genomes into one file for easier comparisons. All of the genome fasta files are stored in a single directory.
 
 ```
