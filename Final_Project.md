@@ -89,7 +89,7 @@ Majority of the isolates tend to have a 52% GC content.
 
 I want to annotate all of the genomes with the same software to have consistency and an up-to-date annotation that can be compared.
 
-I am using the software Prokka, version 1.13, to annotate the genomes.
+I am using the software Prokka, version 1.13, to annotate the genomes. All of the genome fasta files were stored in a single directory.
 
 ```
 prokka *.fasta
