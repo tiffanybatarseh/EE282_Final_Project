@@ -6,6 +6,58 @@ First, I am interesetd in the gene content of *X. fastidiosa* isolates
 
 I've downloaded complete, chromosome level assemblies of *X. fastdiosa* isolates from NCBI. I have also downloaded the *X. taiwanensis* genome to use as an outgroup for analysis.
 
+## Basic genome characteristics
+
+Concatanate all of the genomes into one file for easier comparisons. All of the genome fasta files are stored in a single directory.
+
+```
+cat *.fasta > xylella_genomes.fasta
+```
+
+GC percentage of the genomes and GC distribution.
+
+```
+module load jje/jjeutils
+bioawk -c fastx '{ print $name, gc($seq) }' xylella_genomes.fasta > GC_genomes.txt
+less GC_genomes.txt
+
+AE003849        0.526741
+AE009442        0.517764
+CP000941        0.519175
+CP001011        0.517568
+CP002165        0.517813
+CP006696        0.521037
+CP006740        0.519744
+CP009790        0.52676
+CP009823        0.529057
+CP009826        0.526322
+CP009829        0.526319
+CP009885        0.52699
+CP010051        0.52625
+CP016608        0.519824
+CP016610        0.519814
+CP020870        0.519847
+CP011800.1      0.532545
+```
+
+To make the plot in R to visualize the GC distribution
+
+```
+GC <-read.table("GC_genomes.txt", header=TRUE)
+
+GC$GC_Percentcut <-cut(x=GC$GC_Percent, breaks = 11)
+
+library(ggplot2)
+
+GCgraph <-ggplot(data=GC)
+
+GCgraph + geom_bar(mapping = aes(x=GC$GC_Percentcut)) + labs(title="Sequence GC Distribution", x="GC Percentage", y="Count (Isolates)") + theme_bw()+ theme(axis.text.x = element_text(angle = 60, hjust = 1))
+
+```
+
+![graphGC]()
+
+
 ## Prokka: Genome annotation
 
 I want to annotate all of the genomes with the same software to have consistency and an up-to-date annotation that can be compared.
