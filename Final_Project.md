@@ -138,7 +138,7 @@ raxml -s /data/users/tbatarse/raxmlanalysis/core_gene_alignment.aln-gb -w /data/
 
 ![tree](https://github.com/tiffanybatarseh/EE282_Final_Project/blob/master/Tree_Raxml.png?raw=true)
 
-**Genome Comparisons**
+#Genome Alignments
 
 I'm interested in the differences in the Xylella genomes, so I can do comparisons with MUMmer to see if there are large structural differences between the genomes. I can compare each pair, or compare to the reference genomes of the species, AE003849.
 
