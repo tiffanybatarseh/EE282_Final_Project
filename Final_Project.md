@@ -8,6 +8,12 @@ I've downloaded complete, chromosome level assemblies of *X. fastdiosa* isolates
 
 ## Basic genome characteristics
 
+I have concatanated all of the genomes into one fasta file for easier comparisons. All of the genome fasta files were stored in a single directory.
+
+```
+cat *.fasta > xylella_genomes.fasta
+```
+
 **Length of the genomes**
 
 ```
@@ -31,15 +37,10 @@ CP020870	2508465
 CP011800.1	2824527
 ```
 
-**GC percentage**
+The genomes appear to be between 2.4 and 2.8 Mb, roughly.
 
-Concatanate all of the genomes into one file for easier comparisons. All of the genome fasta files are stored in a single directory.
 
-```
-cat *.fasta > xylella_genomes.fasta
-```
-
-GC percentage of the genomes and GC distribution.
+**GC percentage of the genomes and GC distribution**
 
 ```
 module load jje/jjeutils
