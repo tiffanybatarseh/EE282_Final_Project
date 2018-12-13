@@ -55,7 +55,7 @@ GCgraph + geom_bar(mapping = aes(x=GC$GC_Percentcut)) + labs(title="Sequence GC 
 
 ```
 
-![graphGC]()
+![graphGC](https://github.com/tiffanybatarseh/EE282_Final_Project/blob/master/Gc_xylella_11breaks.png?raw=true)
 
 
 ## Prokka: Genome annotation
