@@ -57,6 +57,7 @@ GCgraph + geom_bar(mapping = aes(x=GC$GC_Percentcut)) + labs(title="Sequence GC 
 
 ![graphGC](https://github.com/tiffanybatarseh/EE282_Final_Project/blob/master/Gc_xylella_11breaks.png?raw=true)
 
+Majority of the isolates tend to have a 52% GC content.
 
 ## Prokka: Genome annotation
 
