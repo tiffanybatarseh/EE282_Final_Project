@@ -166,6 +166,6 @@ mummerplot --fat --layout --filter -p ${PREFIX} ${PREFIX}.delta \
   -R ${REF} -Q ${QRY} --png
   ```
 
-![AE003849vsCP020870](image)
+![AE003849vsCP020870](https://github.com/tiffanybatarseh/EE282_Final_Project/blob/master/xylella_CP020870_1000_CP020870.fasta.png?raw=true)
 
 This comparison seems to have a large inversion in the chromosome between an Olive infecting strain and a citrus infecting strain. 
