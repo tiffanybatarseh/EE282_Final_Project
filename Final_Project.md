@@ -137,3 +137,35 @@ raxml -s /data/users/tbatarse/raxmlanalysis/core_gene_alignment.aln-gb -w /data/
 ```
 
 ![tree](https://github.com/tiffanybatarseh/EE282_Final_Project/blob/master/Tree_Raxml.png?raw=true)
+
+**Genome Comparisons**
+
+I'm interested in the differences in the Xylella genomes, so I can do comparisons with MUMmer to see if there are large structural differences between the genomes. I can compare each pair, or compare to the reference genomes of the species, AE003849.
+
+```
+#!/bin/bash
+#$ -N MUMmer_xylella
+#$ -q abio128,abio,bsg,bsg2
+#$ -pe openmp 32-64
+#$ -R Y
+#$ -m beas
+
+###Loading of binaries via module load or PATH reassignment
+source /pub/jje/ee282/bin/.qmbashrc
+module load gnuplot/4.6.0
+
+###Query and Reference Assignment. State my prefix for output filenames
+REF="AE003849.fasta"
+PREFIX="xylella_CP020870_1000"
+SGE_TASK_ID=1
+QRY="CP020870.fasta"
+PREFIX=${PREFIX}_$(basename ${QRY} .fa)
+
+nucmer -l 100 -c 1000 -d 10 -banded -D 5 -prefix ${PREFIX} ${REF} ${QRY}
+mummerplot --fat --layout --filter -p ${PREFIX} ${PREFIX}.delta \
+  -R ${REF} -Q ${QRY} --png
+  ```
+
+![AE003849vsCP020870](image)
+
+This comparison seems to have a large inversion in the chromosome between an Olive infecting strain and a citrus infecting strain. 
